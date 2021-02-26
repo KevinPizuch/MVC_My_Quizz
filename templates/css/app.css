@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    background-color: lightsteelblue;
+}
+#nav{
+    height: 100px;
+    width: auto;
+    background-color: blueviolet;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+#card-wrapper{
+    margin: auto;
+    width: 80%;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card{
+    margin-bottom: 30px;
+}
+
+.btn{
+    display: block;
+    margin: auto;
+   text-align: center;
+   margin: 20px;
+}

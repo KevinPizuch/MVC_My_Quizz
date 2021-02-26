@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<h1 style="text-align:center">{{ questions.question }}</h1>
+<p>Question : {{nextQuestion}} / 10</p>
+{%if check is defined%}
+    {%if responseGiven == true%}
+       
+        <p style="color:green; font-size:2em;text-align:center">Correct !</p>
+         <a href="/{{ name }}/2/{{nextQuestion}}/{{id}}" class="btn btn-success">Suivant !</a>
+    {% elseif responseGiven == false %}
+        <p style="color:red; font-size:2em;text-align:center">Incorrect la bonne réponse était : {{responseExpected[0].reponse}}</p>
+         <a href="/{{ name }}/2/{{nextQuestion}}/{{id}}" class="btn btn-danger">Suivant !</a>
+    {% endif %}
+{% else %}
+{% for response in responses %}
+        <a href="/{{ name }}/2/{{nextQuestion}}/{{id}}/check/{{response.id}}" class="btn btn-info">{{response.reponse}}</a>
+{% endfor %}
+{% endif %}
+{{dump(ip)}}
+{% endblock %}
